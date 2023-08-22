@@ -68,11 +68,11 @@ window.iconfontRunMain = async () => {
         const { icons, project } = res.data;
 
         const iconifyJson = makeIconifyJson(
-          project.name,
+          "medo",
           icons.reduce((obj, item) => {
             const svg = new SVG(item.show_svg);
             return Object.assign(obj, {
-              [toKebabCase(item.name)]: {
+              [toKebabCase(item.font_class)]: {
                 body: svg.getBody(),
                 ...svg.viewBox,
               },
