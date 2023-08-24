@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Iconfont Medo
-// @version      1.0.0
+// @version      1.0.1
 // @description  下载 React ICON 组件
 // @author       medo
 // @include      https://*.iconfont.cn/*
