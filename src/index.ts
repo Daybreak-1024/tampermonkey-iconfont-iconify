@@ -1,6 +1,5 @@
 import { isEmptyColor, parseColors } from "@iconify/tools/lib/colors/parse";
 import { removeBadAttributes } from "@iconify/tools/lib/svg/cleanup/attribs";
-import { badAttributes } from "@iconify/tools/lib/svg/data/attributes";
 import { checkBadTags } from "@iconify/tools/lib/svg/cleanup/bad-tags";
 import { cleanupInlineStyle } from "@iconify/tools/lib/svg/cleanup/inline-style";
 import { cleanupRootStyle } from "@iconify/tools/lib/svg/cleanup/root-style";
@@ -12,7 +11,6 @@ declare const unsafeWindow: any;
 declare const $: any;
 
 
-badAttributes.add('fill')
 
 async function cleanupSVG(svg) {
   await cleanupInlineStyle(svg);
