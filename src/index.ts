@@ -1,5 +1,5 @@
 import { isEmptyColor, parseColors } from "@iconify/tools/lib/colors/parse";
-import { badAttributes, badSoftwareAttributes, badAttributePrefixes, tagSpecificPresentationalAttributes } from "@iconify/tools/lib/svg/data/attributes";
+import { badAttributes, badSoftwareAttributes, badAttributePrefixes,commonColorPresentationalAttributes , tagSpecificPresentationalAttributes } from "@iconify/tools/lib/svg/data/attributes";
 import { defsTag } from '@iconify/tools/lib/svg/data/tags';
 
 
@@ -14,7 +14,6 @@ declare const unsafeWindow: any;
 declare const $: any;
 
 
-badAttributes.add("fill")
 
 async function removeBadAttributes(svg) {
   await parseSVG(svg, (item) => {
@@ -22,7 +21,7 @@ async function removeBadAttributes(svg) {
     const attribs = item.element.attribs;
     const $element = item.$element;
     Object.keys(attribs).forEach((attr) => {
-      if (attr.slice(0, 2) === "on" || badAttributes.has(attr) || badSoftwareAttributes.has(attr) || badAttributePrefixes.has(attr.split("-").shift())) {
+      if (attr.slice(0, 2) === "on" || badAttributes.has(attr) || commonColorPresentationalAttributes.has(attr) || badSoftwareAttributes.has(attr) || badAttributePrefixes.has(attr.split("-").shift())) {
         $element.removeAttr(attr);
         return;
       }
